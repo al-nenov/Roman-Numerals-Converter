@@ -70,28 +70,4 @@ function convertToRoman(num) {
     result = result.join("");
     return result;
 }
-const number = document.getElementById("number");
-const answer = document.getElementById("roman");
-const submit = document.getElementById("submit");
-const VALIDATION = {
-    tooLong(el, maxLong) {
-        if (el > maxLong) {
-            alert("Input too large!");
-            return true;
-        }
-    },
-    positive(el) {
-        if (el > 0) {
-            return true;
-        } else {
-            alert("Input must be a positive number!");
-        }
-    }
-}
-submit.addEventListener("click", function (ev) {
-    if (!VALIDATION.tooLong(number.value, 5000) &&
-        VALIDATION.positive(number.value)) {
-        answer.innerHTML = convertToRoman(number.value);
-    }
-    ev.preventDefault();
-})
+export {convertToRoman}
