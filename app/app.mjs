@@ -12,24 +12,30 @@ const VALIDATION = {
         }
     },
     positive(el) {
-        if (el > 0) {
+        if (el >= 0) {
             return true;
         } else {
             alert("Input must be a positive number!");
         }
     }
 }
-//TODO Validation
+
+
 var app = new Vue({
     el: '#app',
     data: {
         message: "",
-        decimalInput: ""
+        decimalInput:"0"
     },
     computed: {
         roman: function () {
-            return convertToRoman(this.decimalInput)
+            return convertToRoman(this.decimalInput);
+        //    if(!VALIDATION.tooLong(number.value, 5000) &&
+        //     VALIDATION.positive(number.value)){
+                
+        //     }else{
+        //        this.decimalInput = 0;
+        //     }
         },
-
     }
 })
